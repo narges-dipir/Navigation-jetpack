@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="shoe"
+                type="com.narcis.shoes.model.ShoeBreed"/>
+        <variable
+                name="palette"
+                type="com.narcis.shoes.model.ShoePalette"/>
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@{palette.color}"
+            tools:context=".view.DetailFragment">
+
+        <ImageView
+                android:id="@+id/shoeImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:imageUrl="@{shoe.imageUrl}"
+                android:scaleType="fitCenter"
+                android:minHeight="200dp"/>
+
+        <TextView
+                android:id="@+id/shoeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shoeImage"
+                android:text="@{shoe.shoeBreed}"
+                style="@style/Title"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="4dp"/>
+
+        <TextView
+                android:id="@+id/shoePurpose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shoeName"
+                android:text="@{shoe.bredFor}"
+                style="@style/Text"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="4dp"/>
+
+        <TextView
+                android:id="@+id/shoeTemperament"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shoePurpose"
+                android:text="@{shoe.temperament}"
+                style="@style/Text"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="4dp"/>
+
+        <TextView
+                android:id="@+id/shoeLifespan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shoeTemperament"
+                android:text="@{shoe.lifeSpan}"
+                style="@style/Text"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="4dp"/>
+
+    </RelativeLayout>
+</layout>
